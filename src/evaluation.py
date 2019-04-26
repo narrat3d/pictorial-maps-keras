@@ -3,6 +3,7 @@ import json
 import shutil
 import config
 import os
+from helper_functions import mkdir_if_not_exists
 
 wrong_prediction_threshold = 11
 model_names = config.model_names
@@ -42,7 +43,7 @@ for model_name in model_names:
                 is_prediction_correct = lambda score: score < 0.5
             
             for image_name, predictions in data[class_name].items():
-                for prediction in predictions:
+                for prediction in predictions: # contains the predictions of three runs
                     if (is_prediction_correct(prediction["score"])):
                         correct_detections += 1 
                     else :
@@ -54,12 +55,11 @@ for model_name in model_names:
         print(round(correct_detections / counter * 100, 2))
 
 for class_name in class_names: 
-    # print(class_name)
     occurences = Counter(incorrect_images[class_name])
     
     for image_name, number_of_occurences in occurences.items():
-        if (number_of_occurences >= wrong_prediction_threshold): 
-            # print(image_name)
+        if (number_of_occurences >= wrong_prediction_threshold):
             image_output_folder = os.path.join(config.get_predictions_wrong_folder(task_name), class_name)
+            mkdir_if_not_exists(image_output_folder)
             input_image_path = os.path.join(image_input_folder, class_name, image_name)
             shutil.copy(input_image_path, image_output_folder)

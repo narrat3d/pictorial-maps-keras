@@ -7,7 +7,7 @@ data_folder = r"E:\CNN\classification"
 log_folder = r"E:\CNN\logs\classification"
 
 # folder where best models are stored
-models_folder = r"E:\CNN\models"
+models_folder = r"E:\CNN\models\keras"
 
 
 run_nrs = ["1st", "2nd", "3rd"]
@@ -65,16 +65,26 @@ get_predictions_wrong_folder = lambda task_name: os.path.join(log_folder, "%s_pr
 
 get_temp_model_name = lambda model_name, task_name, crop_name: "%s_%s_%s_40ep_1e-05lr.h5" % (model_name, task_name, crop_name)
 
-maps_non_maps_best_model = {
-    "path": os.path.join(models_folder, maps_non_maps_task_name + "_best.h5"),
-    "model_name": "Xception",
+""" 
+maps_non_maps_best_model = { # faster
+    "path": os.path.join(models_folder, "InceptionResNetV2_maps_vs_non_maps_resize.h5"),
     "prediction_name": "resize"
 }
+"""
+maps_non_maps_best_model = { # better
+    "path": os.path.join(models_folder, "Xception_maps_vs_non_maps_random_crop.h5"),
+    "prediction_name": "avg_over_gridded_crops"
+}
 
-pictorial_maps_other_maps_best_model = {
-    "path": os.path.join(models_folder, pictorial_maps_other_maps_task_name + "_best.h5"),
-    "model_name": "Xception",
-    "prediction_name": "avg_over_gridded_crops"   
+"""
+pictorial_maps_other_maps_best_model = { # faster
+    "path": os.path.join(models_folder, "Xception_pictorial_maps_vs_other_maps_resize.h5"),
+    "prediction_name": "resize"
+}
+"""
+pictorial_maps_other_maps_best_model = { # better
+    "path": os.path.join(models_folder, "Xception_pictorial_maps_vs_other_maps_manual_crop.h5"),
+    "prediction_name": "avg_over_gridded_crops"
 }
 
 def get_image_folders(task_name, class_names):

@@ -80,7 +80,7 @@ PREDICTION_METHODS = {
 if __name__ == '__main__':
     model_names = config.model_names
     run_nrs = config.run_nrs
-    """
+    
     eval_image_folder = config.maps_non_maps_eval_image_folder
     task_name = config.maps_non_maps_task_name
     class_names = config.maps_non_maps_class_names
@@ -94,6 +94,7 @@ if __name__ == '__main__':
     prediction_names = config.pictorial_maps_other_maps_prediction_names
     crop_names = config.pictorial_maps_other_maps_crop_names
     get_crop_for_prediction_names = config.get_pictorial_maps_other_maps_crop_for_prediction_name
+    """
     
     for model_name in model_names:
         print(model_name)
