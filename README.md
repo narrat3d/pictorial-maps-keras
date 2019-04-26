@@ -1,9 +1,9 @@
-# pictorial-maps-keras
+# Classification of (non-)maps and (non-)pictorial maps
 
 ## Installation
 
-* Requires Python 3.6.x (https://www.python.org/downloads/)
-* Requires CUDA Toolkit 9.0 (https://developer.nvidia.com/cuda-downloads) and corresponding cuDNN (https://developer.nvidia.com/rdp/cudnn-download)
+* Requires [Python 3.6.x](https://www.python.org/downloads/)
+* Requires [CUDA Toolkit 9.0](https://developer.nvidia.com/cuda-downloads) and corresponding [cuDNN](https://developer.nvidia.com/rdp/cudnn-download)
 * Download [this project](https://gitlab.ethz.ch/sraimund/pictorial-maps-keras/-/archive/master/pictorial-maps-keras-master.zip)
 * pip install -r requirements.txt
 
