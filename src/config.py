@@ -10,20 +10,20 @@ log_folder = r"E:\CNN\logs\classification"
 models_folder = r"E:\CNN\models\keras"
 
 
-run_nrs = ["1st", "2nd", "3rd"]
+run_nrs = ["1st"] # , "2nd", "3rd"
 
 IMAGE_SIZE = 299
 LEARNING_RATE = 0.00001
 EPOCHS = 40
 BATCH_SIZE = 16
 
-model_names = ["Xception", "InceptionResNetV2"]
+model_names = ["Xception"] # , "InceptionResNetV2"
 train_folder_name = "train"
 eval_folder_name = "eval"
 
 maps_non_maps_class_names = ["maps", "non_maps"]
 maps_non_maps_task_name = "_vs_".join(maps_non_maps_class_names)
-maps_non_maps_crop_names = ["resize", "middle_random_crop", "random_crop"]  
+maps_non_maps_crop_names = ["resize"] # , "middle_random_crop", "random_crop"
 maps_non_maps_prediction_names = ["resize", "middle_random_crop", "random_crop", "avg_over_gridded_crops"]
 
 get_maps_non_maps_crop_for_prediction_name = lambda prediction_name: {
@@ -47,6 +47,13 @@ get_pictorial_maps_other_maps_crop_for_prediction_name = lambda prediction_name:
     "max_in_gridded_crops": "manual_crop"
 }[prediction_name]
 
+get_prediction_label = lambda prediction_name: {
+    "resize": "resized",
+    "middle_random_crop": "middle random crop",
+    "random_crop": "random crop",
+    "avg_over_gridded_crops": "average over grid",
+    "max_in_gridded_crops": "one pictorial cell within grid"
+}[prediction_name]
 
 maps_non_maps_image_folder = os.path.join(data_folder, maps_non_maps_task_name)
 maps_non_maps_eval_image_folder = os.path.join(maps_non_maps_image_folder, eval_folder_name)
