@@ -59,13 +59,15 @@ for roc_curve in roc_curves:
 # plt.plot(fpr2, tpr2, label='Keras 2 (area = {:.3f})'.format(auc_rf2))
 plt.xlabel('False positive rate')
 plt.ylabel('True positive rate')
-plt.title('ROC curves: Pictorial maps vs. non-pictorial maps') # Pictorial maps vs. non-pictorial maps
+plt.title('ROC curves: Maps vs. non-maps') # Pictorial maps vs. non-pictorial maps
 plt.legend(loc='best')
 plt.tight_layout()
 
 axes = plt.gca()
 axes.set_xlim([0,0.1]) # 0,0.3
 axes.set_ylim([0.9,1.0]) # 0.7,1.0
+
+plt.savefig(r"C:\Users\raimund\Downloads\Figure_1.png", dpi=300)
 
 plt.show()
 plt.waitforbuttonpress()
