@@ -35,8 +35,4 @@
 * Run evaluation_roc_curve.py to create a ROC curve plot from the predictions
 
 
-## Source
-https://github.com/tensorflow/tensorflow (Apache License, Copyright by The TensorFlow Authors)
-
-#### Modifications
-None
+© 2019-2020 ETH Zurich, Raimund Schnürer
