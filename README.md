@@ -2,6 +2,10 @@
 
 This is code for the article [Detection of Pictorial Map Objects with Convolutional Neural Networks](https://doi.org/10.1080/00087041.2020.1738112). Visit the [project website](http://narrat3d.ethz.ch/detection-of-pictorial-map-objects-with-cnns/) for more information.
 
+![maps](https://github.com/narrat3d/pictorial-maps-keras/assets/9949879/4b9bcb69-4ff0-4f59-9d5e-7f29b82e2cfc)
+
+Image sources: [Physical Map of the World](https://commons.wikimedia.org/wiki/File:Weltkarte.jpg), [Tampa-Bay Aerial View Map](https://commons.wikimedia.org/wiki/File:Tampa-Bay-aerial-map.png)
+
 ## Installation
 
 * Requires [Python 3.6.x](https://www.python.org/downloads/)
